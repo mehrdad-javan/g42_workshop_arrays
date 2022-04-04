@@ -4,6 +4,8 @@ package se.lexicon;
 // Class: A class is a logical template or blueprint
 // to create objects for sharing the common properties and methods
 
+import java.util.Arrays;
+
 /**
  * Stores names in a String array
  * @author Mehrdad Javan
@@ -41,6 +43,25 @@ public class NameRepository {
     // use Arrays.copyOf()
     NameRepository.names = names;
   }
+
+  /**
+   * Should completely empty the array.
+   */
+  public static void clear(){
+     names = new String[0];
+  }
+
+
+  /**
+   * Returns all names in a new array
+   *
+   * @return String[] This returns all array elements
+   */
+  public static String[] findAll(){
+    return Arrays.copyOf(names, names.length);
+  }
+
+
 
 
 }
