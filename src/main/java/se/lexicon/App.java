@@ -1,5 +1,7 @@
 package se.lexicon;
 
+import java.util.Arrays;
+
 /**
  * Hello world!
  */
@@ -9,10 +11,11 @@ public class App {
     String[] names = {"Erik Svensson", "Mehrdad Javan"};
     NameRepository.setNames(names);
     System.out.println(NameRepository.getSize());
-    NameRepository.clear();
+    //NameRepository.clear();
     System.out.println(NameRepository.getSize());
-
-
+    System.out.println(Arrays.toString(NameRepository.findAll()));
+    System.out.println(NameRepository.find("Mehrdad Javan"));
+    System.out.println(NameRepository.find("Test Test1"));
 
   }
 }

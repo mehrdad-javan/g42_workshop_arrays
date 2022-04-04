@@ -62,6 +62,19 @@ public class NameRepository {
   }
 
 
+  public static String find(final String fullName){
+    // step 1: define a loop
+    // step 2: compare the element with fullName or if condition
+    // return the result
+
+    for (String element : names){
+      if (element.equalsIgnoreCase(fullName)){
+        return element;
+      }
+    }
+    return "Error: Data not found";
+  }
+
 
 
 }
