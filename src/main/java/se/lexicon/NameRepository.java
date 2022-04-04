@@ -130,6 +130,55 @@ public class NameRepository {
     return null;
   }
 
-    
 
+  public static boolean update(final String original, final String updatedName) {
+    int originalIndex = -1;
+    for (int i = 0; i < names.length; i++) {
+      String content = names[i];
+      if (content.equalsIgnoreCase(original)) {
+        originalIndex = i;
+      }
+    }
+    if (originalIndex == -1) {
+      return false;
+    }
+
+    int updatedIndex = -1;
+    for (int i = 0; i < names.length; i++) {
+      String content = names[i];
+      if (content.equalsIgnoreCase(updatedName)) {
+        updatedIndex = i;
+      }
+    }
+
+    if (updatedIndex != -1) {
+      return false;
+    }
+    names[originalIndex] = updatedName;
+
+    return true;
   }
+
+
+  public static boolean remove(String fullName) {
+
+    Arrays.sort(names, String.CASE_INSENSITIVE_ORDER);
+    int findIndex = Arrays.binarySearch(names, fullName);
+    if (findIndex < 0) {
+      return false;
+    }
+    String[] anotherArray = new String[names.length - 1];
+    int sequencer = 0;
+    for (int i = 0; i < names.length; i++) {
+      if (i == findIndex) {
+        continue;
+      }
+      anotherArray[sequencer++] = names[i];
+    }
+    names = anotherArray;
+    return true;
+  }
+
+
+
+}
