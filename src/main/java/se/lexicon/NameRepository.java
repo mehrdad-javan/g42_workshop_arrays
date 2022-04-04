@@ -106,4 +106,30 @@ public class NameRepository {
   }
 
 
-}
+  public static String[] findByFirstName(final String firstName){
+
+    // step1: traverse on array
+    // step2: split the fullName with whitespace and get the firstName
+    // step3: write a condition or if statement
+    // step4: define an empty array + add the found names to array
+    // step5: return the array
+
+    String [] result = {};
+    for (String element: names){
+      String[] fullNameArray = element.split(" "); //["Erik", "Svensson"]
+      String fName = fullNameArray[0];
+      if (fName.equalsIgnoreCase(firstName)){
+        result = addToArray(result, element);
+      }
+    }
+    return result;
+  }
+
+  public static String[] findByLastName(final String lastName){
+    // todo: do it later
+    return null;
+  }
+
+    
+
+  }

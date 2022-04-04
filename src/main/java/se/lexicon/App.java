@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class App {
   public static void main(String[] args) {
     System.out.println(NameRepository.getSize());
-    String[] names = {"Erik Svensson", "Mehrdad Javan"};
+    String[] names = {"Erik Svensson", "Mehrdad Javan", "Erik Alfredsson"};
     NameRepository.setNames(names);
     System.out.println(NameRepository.getSize());
     //NameRepository.clear();
@@ -26,6 +26,8 @@ public class App {
     }
 
     System.out.println(Arrays.toString(NameRepository.findAll()));
+
+    System.out.println(Arrays.toString(NameRepository.findByFirstName("Erik")));
 
 
   }
