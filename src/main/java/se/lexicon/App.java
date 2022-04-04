@@ -16,6 +16,17 @@ public class App {
     System.out.println(Arrays.toString(NameRepository.findAll()));
     System.out.println(NameRepository.find("Mehrdad Javan"));
     System.out.println(NameRepository.find("Test Test1"));
+    System.out.println(NameRepository.add("Simon Elbrink"));
+    System.out.println(Arrays.toString(NameRepository.findAll()));
+    boolean newName = NameRepository.add("Mehrdad Javan");
+    if (newName){
+      System.out.println("Name is Added to Array");
+    } else {
+      System.out.println("Name is Duplicate!");
+    }
+
+    System.out.println(Arrays.toString(NameRepository.findAll()));
+
 
   }
 }

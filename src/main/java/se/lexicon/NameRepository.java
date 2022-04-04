@@ -4,6 +4,8 @@ package se.lexicon;
 // Class: A class is a logical template or blueprint
 // to create objects for sharing the common properties and methods
 
+import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
 import java.util.Arrays;
 
 /**
@@ -72,9 +74,36 @@ public class NameRepository {
         return element;
       }
     }
-    return "Error: Data not found";
+    return null;
   }
 
+
+  /**
+   * Should add a new name to the array.
+   * Returns true when name was added and false when the array contains the name
+   *
+   */
+  public static boolean add(final String fullName) {
+    // step1: travers on array -> loop
+    // step2: check the full name is duplicate or no
+    // step3: make a copy of array with new element
+    // step4: add fullName to array
+    // step5: replace new array with existing array
+
+    String result = find(fullName); // reuse the find method
+    if (result != null){
+      return false;
+    }
+
+    names = addToArray(names, fullName);
+    return true;
+  }
+
+  private static String [] addToArray(String[] source, String newName){
+    String [] tmp = Arrays.copyOf(source, source.length + 1);
+    tmp[tmp.length - 1] = newName;
+    return tmp;
+  }
 
 
 }
