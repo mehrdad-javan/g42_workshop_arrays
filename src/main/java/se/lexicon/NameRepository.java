@@ -84,11 +84,12 @@ public class NameRepository {
    *
    */
   public static boolean add(final String fullName) {
-    // step1: travers on array -> loop
-    // step2: check the full name is duplicate or no
-    // step3: make a copy of array with new element
-    // step4: add fullName to array
-    // step5: replace new array with existing array
+    // step1: traverse on array
+    // step2: split the current element of array with whitespace and get the firstName
+    // step3: write a condition to compare element name with method parameter
+    // step4: define an empty array 
+    // step5: add the found name to array (expand the existing array)
+    // step6: return the array
 
     String result = find(fullName); // reuse the find method
     if (result != null){
